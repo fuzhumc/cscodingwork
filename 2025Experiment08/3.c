@@ -24,7 +24,7 @@ int main()
 {
     int n;
     scanf("%d",&n);
-    int (*a)[n]=malloc(n*sizeof(int *));
+    int (*a)[n]=(int (*)[n])malloc(n*n*sizeof(int));
     for(int i=0;i<n;i++) for(int j=0;j<n;j++) a[i][j]=0;
     generate_magic_square(n,a);
     for(int i=0;i<n;i++)
@@ -35,5 +35,6 @@ int main()
         }
         printf("\n");
     }
+    free(a);
     return 0;
 }
