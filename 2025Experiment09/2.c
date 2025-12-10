@@ -38,6 +38,7 @@ void searchlist(struct student *head, char *name)
             printf("%d %s %f\n",p->stunum,p->name,p->score);
             return;
         }
+        p=p->next;
     }
     printf("Not exist!\n");
 }
@@ -45,8 +46,11 @@ void searchlist(struct student *head, char *name)
 int main()
 {
     struct student *head=buildlist(10);
+    char name[20];
     printf("\n");
     printlist(head);
     printf("\n");
-    searchlist(head,"李霞");
+    scanf("%s",name);
+    searchlist(head,name);
+    return 0;
 }
